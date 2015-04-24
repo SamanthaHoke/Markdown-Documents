@@ -1,5 +1,6 @@
 #Command line notes
 -----------
+
 ##General Windows commands
 **cd**  
 Change directory
@@ -72,7 +73,10 @@ Remove files added to track
 List branches
 
 **git checkout -b *branch* *tag***  
-Check out into a new branch. Remove -b to checkout existing branch
+Check out into a new branch. Remove -b to checkout existing branch  
+
+**git checkout *branch* *fileName(s)***  
+Checkout specific files from one branch to add to your current branch
 
 **git tag -a v00.01.00 -m "Week 01"**  
 **git push origin v00.01.00**  
