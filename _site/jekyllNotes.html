@@ -1,0 +1,56 @@
+<h1 id="jekyll-notes">Jekyll Notes</h1>
+<p>###A collection of notes for installing and running Jekyll</p>
+
+<h2 id="installation">Installation</h2>
+<ul>
+  <li>Make sure Ruby is installed
+    <ul>
+      <li><code>ruby --version</code></li>
+      <li>If it is not installed go to the <a href="https://www.ruby-lang.org/en/downloads/">Ruby Website</a></li>
+    </ul>
+  </li>
+  <li>
+    <p><code>gem install bundler</code></p>
+  </li>
+  <li>
+    <p>In your repository, make a file called <strong>Gemfile</strong> with the following content:</p>
+
+    <pre><code> source 'https://rubygems.org'
+ gem 'github-pages'
+</code></pre>
+  </li>
+  <li>Run <code>bundle install</code>
+    <ul>
+      <li>This may need the <a href="https://www.ruby-lang.org/en/downloads/">Ruby Devkit</a></li>
+      <li>To install the devKit, follow the instructions <a href="http://github.com/oneclick/rubyinstaller/wiki/Development-Kit">here</a>
+        <ul>
+          <li>Download and unzip the Devkit</li>
+          <li>Run ` ruby dk.rb init `</li>
+          <li>Run ` ruby dk.rb install `</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="running">Running</h2>
+<p>Run the following command in the root directory in the <code>gh-pages</code> branch.<br />
+<code>bundle exec jekyll serve </code><br />
+&gt;Serves on port 4000</p>
+
+<h2 id="update">Update</h2>
+<p>Update with <code>bundle update</code> and <code>bundle update github-pages </code></p>
+
+<h2 id="frontmatter">FrontMatter</h2>
+<p>Place at the top of every markdown page:  </p>
+
+<pre><code>---
+title: This is my title
+layout: post
+--- &gt;Can leave space between `---` empty.
+</code></pre>
+
+<h2 id="links">Links</h2>
+<p>For full instructions, go to <a href="https://help.github.com/articles/using-jekyll-with-pages/">Github page’s instructions</a></p>
+
+<p>Also look at the <a href="https://help.github.com/categories/github-pages-basics/">full list of help topics for Github Pages</a></p>
