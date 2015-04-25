@@ -18,7 +18,9 @@
 Used to create self-contained modules in JavaScript. Allow data hiding and encapsulation.
 ###Angular Modules
 	var app = angular.module('name', []);
->Place dependency module names in quotes in the []
+>Place dependency module names in quotes in the []  
+>The empty [] are required when creating new modules, but **must not** be used when just referencing an existing module.
+
 
 Modules can have factories and controllers.
 
