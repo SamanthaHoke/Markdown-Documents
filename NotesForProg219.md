@@ -102,6 +102,21 @@ List globally installed packages
 **express MyProject**  
 Create new express project
 
+##Bower
+>Bower is a front-end library helper
+
+
+**npm install -g bower**  
+Installs bower globally. Use only once.  
+
+**bower init**  
+Initializes bower in a project.
+>Take the recommended settings to list dependencies and ignore common files.
+
+**bower install jquery --save**  
+**bower install angular --save**  
+Installs a local copy of the requested framework. `--save` sets the framework in the dependencies list.
+
 ##Grunt
 **grunt**  
 Build project
