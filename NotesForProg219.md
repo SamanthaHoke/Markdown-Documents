@@ -147,11 +147,12 @@ Run project on localhost port
 ##Create Angular with Yeoman
 
     npm install -g grunt-cli bower yo generator-karma generator-angular
+
     mkdir Week02-Angular
     cd Week02-Angular
     yo angular
 
->Don't use Sass and Compass option without installing Ruby and Compass
+>Don't use Sass and Compass option without installing Ruby and Compass.
 
 To run, use `grunt serve`
     
@@ -159,24 +160,41 @@ To run, use `grunt serve`
   
 
  - Install PuTTY
+	 - If you are the admin on your computer, use the installer. Otherwise, use the zip file.
+	 - [Download the zip or installer](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
  - Create SSH variable as the location of plink.exe
- - Run puttygen
- - Create a new key pair
- - Load public key to bitbucket
- - Change .gitconfig file to use SSH URL
+ - Run **puttygen**
+ - Create a new key pair.
+	 - *It's a good idea to have a folder in your home directory to store data like this.*
+ - Load public key to **BitBucket**
+ - Change **.gitconfig** file to use SSH URL
  - `plink bitbucket.org`
  - `git config --global push.default simple`
- - Run Pageant and load private key each time you start the computer
+ - Run Pageant and load private key *each time you start the computer.*
 
 
 ##Global Packages to Install
+General packages:  
+
 	npm install -g bower
-	npm install -g express-generator
 	npm install -g jshint
 	npm install -g nodemon
+
+Express:  
+
+
+	npm install -g express-generator
+Angular:  
+
+	npm install -g yo
+	npm install -g grunt-cli
+	npm install -g generator-angular 
+	npm install -g generator-karma 
+
+
 	
 ##$PATH 
-The $PATH variable should include:
+The **$PATH** variable should include:
 
 - Git cmd
 - Text editor like Geany or Notepad++
