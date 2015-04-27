@@ -119,10 +119,12 @@ Installs a local copy of the requested framework. `--save` sets the framework in
 
 ##Grunt
 **grunt**  
-Build project
+Builds project
 
 **grunt test**  
-Run unit tests
+Runs unit tests
 
 **grunt serve**  
-Run project on localhost port
+Runs project on localhost port.  
+
+> To set the port, go into the **GruntFile.js** in your project, find the connection options object where **port** is listed. Change the port number to any number you prefer.
