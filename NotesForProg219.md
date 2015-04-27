@@ -50,3 +50,14 @@ The **$PATH** variable should include:
 
 ##GIT_SSH
 The GIT_SSH variable should be set to the folder of plink.exe on your machine.
+
+##Setting up cmd.exe shortcut
+To create a command prompt shortcut that automatically runs you **dosalias** file:  
+
+ - Open **cmd.exe** and right click to pin to desktop
+ - Right click the shortcut and open the properties window
+ - Set the target to `<location of cmd.exe> /k <location of dosalias> `
+
+Example target:  
+
+	C:\Windows\System32\cmd.exe /k %USERPROFILE%\Bin\DosAlias.bat
