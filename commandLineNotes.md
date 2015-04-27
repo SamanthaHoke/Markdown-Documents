@@ -118,6 +118,8 @@ Initializes bower in a project.
 Installs a local copy of the requested framework. `--save` sets the framework in the dependencies list.
 
 ##Grunt
+>Grunt is a task runner for JavaScript 
+
 **grunt**  
 Builds project
 
@@ -128,3 +130,7 @@ Runs unit tests
 Runs project on localhost port.  
 
 > To set the port, go into the **GruntFile.js** in your project, find the connection options object where **port** is listed. Change the port number to any number you prefer.
+
+
+##Karma
+>Karma is a unit test runner which constantly runs the tests in the background.

@@ -34,6 +34,7 @@ Angular:
 	npm install -g grunt-cli
 	npm install -g generator-angular 
 	npm install -g generator-karma 
+	npm install -g karma-cli
 
 
 	
