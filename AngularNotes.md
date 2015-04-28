@@ -63,7 +63,9 @@ In the HTML:
 
 
 ###Directives
->Directives appear in the HTML file.  
+>Directives appear in the HTML file, usually as attributes of HTML elements. Can also be used as custom element names. 
+>
+>Named as ng-*name* or data-ng-*name*.
 
 **ng-app**  
 **ng-app = "Name"**  
