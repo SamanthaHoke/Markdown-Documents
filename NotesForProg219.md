@@ -62,3 +62,8 @@ To create a command prompt shortcut that automatically runs you **dosalias** fil
 Example target:  
 
 	C:\Windows\System32\cmd.exe /k %USERPROFILE%\Bin\DosAlias.bat
+
+
+
+
+[Back to README.md](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/README.md)
