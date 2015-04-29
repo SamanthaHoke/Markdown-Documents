@@ -18,6 +18,3 @@ Repository created and site set up.
 
 ###4/28/2015
 Added table of contents.
-
-###4/29/2015
-Add GitHub specific key.
