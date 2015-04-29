@@ -64,6 +64,15 @@ Example target:
 	C:\Windows\System32\cmd.exe /k %USERPROFILE%\Bin\DosAlias.bat
 
 
+##Deleting Deeply Nested Folder
+Some projects, like Angular with Yeoman, creating extremely deeply nested folders which are very difficult to delete. To remove these folders, use *Rimraf*, an npm package.
 
+To install:  
+
+	npm install -g rimraf
+
+To use:  
+
+	rimraf folderName
 
 [Back to README.md](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/README.md)
