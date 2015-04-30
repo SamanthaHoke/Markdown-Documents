@@ -5,6 +5,23 @@
 	express MyProject
 	cd MyProject
 	npm install
+
+##Create express with Mongo
+Follow same steps as for a simple express project and then:
+  
+ - Create a `.bowerrc` file with   
+	`{
+	"directory": "public/components"
+	}`
+ - Install packages  
+ - Add links in `index.jade` to jQuery, Bootstrap, Angular
+ - Setup MongoLab
+ - Create `resource.js` file in *Javascripts* folder.
+	 - 
+ - Add your API key
+
+> [See my MongoDB page](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/mongoDB.md) for packages, links, and resource.js code.  
+
 ##Create Angular from scratch
 
  - Create a folder

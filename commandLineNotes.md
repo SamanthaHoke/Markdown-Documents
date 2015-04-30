@@ -72,13 +72,22 @@ Remove files added to track
 **git branch**  
 List branches
 
+**git checkout *branch***  
+Change to another branch
+
 **git checkout -b *branch* *tag***  
 Check out into a new branch. Remove -b to checkout existing branch  
 
 **git checkout *branch* *fileName(s)***  
 Checkout specific files from one branch to add to your current branch
 
-**git tag -a v00.01.00 -m "Week 01"**  
+**git branch -d *branchName***  
+Deletes named branch
+
+**git merge *branchToMerge***  
+Merges named branch into the current branch
+
+**git tag -a v00.01.00 -m "Message"**  
 **git push origin v00.01.00**  
 Add a tag and push it to the origin
 
