@@ -108,7 +108,14 @@ Expressions can appear in attributes or where regular text would appear.
 	<p>{{bookControl.Title}}</p>
 	<span class="done-{{item.done}}"/>
 
+##Useful Resources
+ - [Angular Documentation](https://docs.angularjs.org/guide)
+ - [Angular on W3Schools](http://www.w3schools.com/angular/)
+ - [Angular on Code Academy](http://www.codecademy.com/en/learn/learn-angularjs)
 
 
+
+
+----------
 
 [Back to README.md](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/README.md)
