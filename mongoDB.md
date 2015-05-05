@@ -96,5 +96,5 @@ Retrieve the collection in the module's factory:
  - Click on user
  - Find "current key" near the bottom
 
-
+-----------------------
 [Back to README.md](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/README.md)

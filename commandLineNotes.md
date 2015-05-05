@@ -94,6 +94,13 @@ Add a tag and push it to the origin
 **git config --global push.default simple**  
 Set push default
 
+**git rm -r *folder***  
+**git rm -r --cached *folder***  
+Removes a folder from the remote repository.  
+ `--cached` keeps the local copy.
+
+
+
 ##Node
 **npm install -g express-generator**  
 install express-generator globally
@@ -144,5 +151,5 @@ Runs project on localhost port.
 ##Karma
 >Karma is a unit test runner which constantly runs the tests in the background.
 
-
+--------------------
 [Back to README.md](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/README.md)

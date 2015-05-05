@@ -28,6 +28,7 @@ Express:
 
 
 	npm install -g express-generator
+
 Angular:  
 
 	npm install -g yo
@@ -74,5 +75,5 @@ To install:
 To use:  
 
 	rimraf folderName
-
+--------------------
 [Back to README.md](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/README.md)
