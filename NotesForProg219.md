@@ -37,7 +37,14 @@ Angular:
 	npm install -g generator-karma 
 	npm install -g karma-cli
 
+Jasmine:  
 
+	npm install -D jasmine
+	npm install -g jasmine
+
+Jasmine with Yeoman:  
+
+	npm install -g generator-jasmine
 	
 ##$PATH 
 The **$PATH** variable should include:
