@@ -71,9 +71,30 @@ Example target:
 
 	C:\Windows\System32\cmd.exe /k %USERPROFILE%\Bin\DosAlias.bat
 
+##PROMPT
+You can reset your prompt at  the command line using the %PROMPT% variable.
+Full directions are given in [Scott Hanselman's blog article](http://www.hanselman.com/blog/ABetterPROMPTForCMDEXEOrCoolPromptEnvironmentVariablesAndANiceTransparentMultiprompt.aspx).
+
+**Example:**
+
+	set prompt=[%computername%] $p$_$g
+
+This will display the computer name, the path, a carriage return, and then a greater than sign. 
+
+> There *cannot* be spaces between the variable name, the equal sign, or the start of the variable definition. Spaces will cause a new, different variable to be created instead of overwriting the current **prompt** variable. 
+	
+**$p**  
+Shows the current path  
+
+**$_**  
+Prints a carriage return  
+
+**$g**  
+Prints a greater than sign: `>`
+
 
 ##Deleting Deeply Nested Folder
-Some projects, like Angular with Yeoman, creating extremely deeply nested folders which are very difficult to delete. To remove these folders, use *Rimraf*, an npm package.
+Some projects, like Angular with Yeoman, create extremely deeply nested folders which are very difficult to delete. To remove these folders, use *Rimraf*, an npm package.
 
 To install:  
 
