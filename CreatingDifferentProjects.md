@@ -17,7 +17,6 @@ Follow same steps as for a simple express project and then:
  - Add links in `index.jade` to jQuery, Bootstrap, Angular
  - Setup MongoLab
  - Create `resource.js` file in *Javascripts* folder.
-	 - 
  - Add your API key
 
 > [See my MongoDB page](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/mongoDB.md) for packages, links, and resource.js code.  
