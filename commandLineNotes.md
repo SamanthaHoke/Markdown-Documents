@@ -22,7 +22,12 @@ Use a program name that is in your $PATH to open it in a different program
 Create or overwrite a file with the given text
 
 **SET**  
-Shows all environment variables
+Shows all environment variables  
+
+**robocopy oldFolderName newFolderName /MIR**  
+Creates a copy of a folder structure into the newly named folder.  
+
+
 
 ##General Git Bash commands
 **ls -a**  
@@ -97,7 +102,10 @@ Set push default
 **git rm -r *folder***  
 **git rm -r --cached *folder***  
 Removes a folder from the remote repository.  
- `--cached` keeps the local copy.
+ `--cached` keeps the local copy.  
+
+**git mv oldfolder newfolder**  
+Rename a folder.
 
 
 
@@ -132,6 +140,9 @@ Initializes bower in a project.
 **bower install jquery --save**  
 **bower install angular --save**  
 Installs a local copy of the requested framework. `--save` sets the framework in the dependencies list.
+
+**bower install bootswatch-dist#yeti**  
+Installs a bootstrap theme using bootswatch. Replace "yeti" with the name of the theme desired.
 
 ##Grunt
 >Grunt is a task runner for JavaScript 
