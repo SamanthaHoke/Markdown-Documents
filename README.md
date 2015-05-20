@@ -13,6 +13,7 @@ This repository stores my markdown documents and is also a playground for using 
  - [MongoDB](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/mongoDB.md)
  - [Unit Testing](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/unitTesting.md)
  - [Express Notes](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/expressNotes.md)
+ - [EC2 Notes](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/EC2Notes.md)
 
 ##History
 
@@ -21,3 +22,5 @@ Repository created and site set up.
 
 ###4/28/2015
 Added table of contents.
+
+
