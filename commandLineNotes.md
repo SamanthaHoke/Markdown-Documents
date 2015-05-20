@@ -27,6 +27,40 @@ Shows all environment variables
 **robocopy oldFolderName newFolderName /MIR**  
 Creates a copy of a folder structure into the newly named folder.  
 
+##General Linux commands
+**ls -la**  
+Lists directory contents, including hidden folders.  
+
+**cd**  
+Changes directory. Used without a directory name, or `. ` or `..`, returns directly to the Home directory.  
+
+**pwd**  
+Prints full working directory.  
+
+**cp**  
+Copies a file. Use with the old file name, then the new file location. Represent the file has the same name in the new location with `/.`.
+Eg. `cp oldFile.txt Documents/.` will copy the text file into the Documents folder using the same filename.  
+
+**mv**  
+Moves a file to the new location given.  
+
+**rm -r**  
+Removes a directory recusively.  
+
+**mkdir**  
+Creates a directory.  
+
+**sudo**  
+Used to have super user privileges temporarily. Used when working with files or directories outside your home directory.  
+
+**chmod**  
+Modify file access privileges.  
+
+**chown**  
+Change file owner.  
+
+**fs**  
+Show free space on drive.
 
 
 ##General Git Bash commands
