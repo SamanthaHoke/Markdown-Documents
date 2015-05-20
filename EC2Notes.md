@@ -113,11 +113,30 @@ Also clone your repository.
 	sudo apt-get install tasksel
 	sudo tasksel install lamp-server
 
+###Set up .bash_aliases
+Copy from JsObjects to the home directory:  
+
+	cd
+	cp ~/Git/JsObjects/Utilities/SetupLinuxBox/.bash_aliases .
+
+Open in nano. Change your **sshadd** command to use your key name (probably id_rsa). Reload file from the home directory:  
+
+	source .bash_aliases
+###Set up Node  
+Run these files from JsObjects:  
+
+	cd Git/JsObjects/Utilities/NodeInstall
+	./NodeInstall.sh
+	./InstallNodePackages.sh
+
+
+>Shell scripts are run with `./scriptName.sh`
 
 
 
 #Important notes
  - Never have more than one running instance when using the free AWS account or you can be charged.
+ - Don't create multiple elastic IP addresses: this would incur a fee.
  - Do not click "save" instead of "load" when selecting a saved session or it will erase the saved session when using PuTTY.
 
 #Resources

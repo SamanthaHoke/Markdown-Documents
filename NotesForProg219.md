@@ -103,5 +103,18 @@ To install:
 To use:  
 
 	rimraf folderName
+
+##Clearing Browser Cache  
+If you are running a project and you are having problems appear in the console or in Jasmine tests which you have changed in the code, look in the developer tools source tab.  
+If the code in the sources tab is not the same as the code in your actual project, you may need to clear your browser's cache.
+
+**In Chrome:**  
+Use Ctrl+Shift+Delete.   
+Choose only **cached images and files**.
+
+Then reload your page with **F5** or the refresh button.
+
+This clears any saved files from old versions of your projects or other projects with the same file names. 
+
 --------------------
 [Back to README.md](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/README.md)

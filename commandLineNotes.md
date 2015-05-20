@@ -168,7 +168,7 @@ Create new express project
 Installs bower globally. Use only once.  
 
 **bower init**  
-Initializes bower in a project.
+Initializes bower in a project. Creates a `bower.json` file.
 >Take the recommended settings to list dependencies and ignore common files.
 
 **bower install jquery --save**  
