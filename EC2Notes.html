@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>EC2Notes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="jumbotron">EC2 Notes</h1>
+        <h1>Setup</h1>
+        <h3>Creating an Instance</h3>
+        <ul>
+            <li>Go to <a href="https://www.amazon.com/ap/signin?openid.assoc_handle=aws&amp;openid.return_to=https%3A%2F%2Fsignin.aws.amazon.com%2Foauth%3Fresponse_type%3Dcode%26client_id%3Darn%253Aaws%253Aiam%253A%253A015428540659%253Auser%252Fhomepage%26redirect_uri%3Dhttps%253A%252F%252Fus-west-2.console.aws.amazon.com%252Fconsole%252Fhome%253Fregion%253Dus-west-2%2526state%253DhashArgs%252523%2526isauthcode%253Dtrue%26noAuthCookie%3Dtrue&amp;openid.mode=checkid_setup&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;action=&amp;disableCorpSignUp=&amp;clientContext=&amp;marketPlaceId=&amp;poolName=&amp;authCookies=&amp;pageId=aws.ssop&amp;siteState=registered%2Cen_us&amp;accountStatusPolicy=P1&amp;sso=&amp;openid.pape.preferred_auth_policies=MultifactorPhysical&amp;openid.pape.max_auth_age=120&amp;openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&amp;server=%2Fap%2Fsignin%3Fie%3DUTF8&amp;accountPoolAlias=&amp;forceMobileApp=0&amp;forceMobileLayout=0">AWS management console</a> and login.</li>
+            <li>Choose the <strong>EC2</strong> option from the upper left corner.</li>
+            <li>Check your running instances. If you have one running and want to create a new one, first stop the running instance.</li>
+            <li>Click <strong>launch instance</strong>.</li>
+            <li>
+                Choose instance type (eg. Linux or Windows)
+                <ul>
+                    <li>For this class use the <strong>Ubuntu Server 14.04 LTS (HVM), SSD Volume Type</strong> option</li>
+                </ul>
+            </li>
+            <li>Choose micro type</li>
+            <li>Choose defaults for next two screens</li>
+            <li>Create a tag &quot;Name&quot; with the name of your instance as the value</li>
+            <li>
+                Configure a new security group and choose ports to open
+                <ul>
+                    <li>or use an existing security group</li>
+                </ul>
+            </li>
+            <li>Review and launch your instance.</li>
+            <li>Download the key pair</li>
+        </ul>
+        <h2>Set up elastic IP Address</h2>
+        <ul>
+            <li>Go to <strong>elastic IP</strong> from the main EC2 dashboard. </li>
+            <li>If you have not already created an elastic IP, create one and associate it with your instance</li>
+            <li>If you have already created one, you will have to disassociate it first and then re-associate it with your new instance.</li>
+        </ul>
+        <h2>Set up keys</h2>
+        <p>
+            When you create an instance, you are given a <strong>pem</strong> file. To use this with Windows, you must convert it to a PuTTY <strong>.ppk</strong> file.
+        </p>
+        <ul>
+            <li>Open puttyGen</li>
+            <li>Choose <strong>Conversions</strong> from  the top menu</li>
+            <li>Choose import key</li>
+            <li>Import your key and save your new <strong>.ppk</strong> file</li>
+        </ul>
+        <blockquote>
+            <p>If you use a dosalias command such as <strong>sshadd</strong> to load your keys, add this new key to your dosalias file's command definition for <strong>sshadd</strong>.</p>
+        </blockquote>
+        <h2>Set up PuTTY access</h2>
+        <ul>
+            <li>Run PuTTY</li>
+            <li>Enter your elastic IP and a session name on the main screen.</li>
+            <li>Save</li>
+            <li>Go to Connection &gt; Data and enter &quot;ubuntu&quot; as the saved username</li>
+            <li>Return to <strong>Session</strong> and click save</li>
+            <li><strong>Optional:</strong> go to <strong>Appearance</strong> to change font size and <strong>Colours</strong> to change font and background colors. Return to <strong>session</strong> to save</li>
+            <li>Click open to start a session</li>
+        </ul>
+        <p>When returning to PuTTY, you can select a saved session and click load to reload it.</p>
+        <blockquote>
+            <p><strong>VERY IMPORTANT</strong>  Do not click &quot;save&quot; instead of &quot;load&quot; when selecting a saved session or it will erase the saved session.</p>
+        </blockquote>
+        <h2>Provision</h2>
+        <p>
+            Open a session to your EC2 instance with PuTTY
+        </p>
+        <h3>Update and upgrade the system:</h3>
+<pre><code>sudo apt-get update
+sudo apt-get upgrade 
+</code></pre>
+
+        <h3>Setup SSH:</h3>
+        <p>
+            Return to the home directory:
+        </p>
+<pre><code>cd
+</code></pre>
+
+        <p>
+            Create an ssh key:
+        </p>
+<pre><code>ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa 
+cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+</code></pre>
+
+        <p>
+            Go to the .ssh folder in the home directory and cat the public key:
+        </p>
+<pre><code>cd .ssh
+cat id_rsa.pub
+</code></pre>
+
+        <p>Select the whole public key and add it to your BitBucket account.</p>
+        <p>
+            Edit the <strong>.bashrc</strong> file in your home directory:<br />
+            Open in nano editor:
+        </p>
+<pre><code>nano .bashrc
+</code></pre>
+
+        <p>
+            Add the following code to the bottom of <strong>.bashrc</strong>:
+        </p>
+<pre><code>if [ -z &quot;$SSH_AUTH_SOCK&quot; ] ; then
+eval `ssh-agent` 
+fi
+export PATH=&quot;$PATH:$HOME/npm/bin&quot;
+</code></pre>
+
+        <p>
+            Rerun the <strong>.bashrc</strong> file:
+        </p>
+<pre><code>source ~/.bashrc
+</code></pre>
+
+        <p>Make the private key accessible only to you: </p>
+<pre><code>chmod 400 ~/.ssh/id_rsa
+</code></pre>
+
+        <p>
+            Load the key:
+        </p>
+<pre><code>cd .ssh
+ssh-add id_rsa
+</code></pre>
+
+        <h3>Install Git:</h3>
+        <blockquote>
+            <p>Run in the home directory </p>
+        </blockquote>
+<pre><code>sudo apt-get install git
+mkdir Git
+cd Git
+git clone git://github.com/charliecalvert/JsObjects.git
+</code></pre>
+
+        <p>Also clone your repository.</p>
+        <h3>Install LAMP:</h3>
+<pre><code>sudo apt-get install tasksel
+sudo tasksel install lamp-server
+</code></pre>
+
+        <h3>Set up .bash_aliases</h3>
+        <p>
+            Copy from JsObjects to the home directory:
+        </p>
+<pre><code>cd
+cp ~/Git/JsObjects/Utilities/SetupLinuxBox/.bash_aliases .
+</code></pre>
+
+        <p>
+            Open in nano. Change your <strong>sshadd</strong> command to use your key name (probably id_rsa). Reload file from the home directory:
+        </p>
+<pre><code>source .bash_aliases
+</code></pre>
+
+        <h3>Set up Node</h3>
+        <p>
+            Run these files from JsObjects:
+        </p>
+<pre><code>cd Git/JsObjects/Utilities/NodeInstall
+./NodeInstall.sh
+./InstallNodePackages.sh
+</code></pre>
+
+        <blockquote>
+            <p>Shell scripts are run with <code>./scriptName.sh</code></p>
+        </blockquote>
+        <h1>Important notes</h1>
+        <ul>
+            <li>Never have more than one running instance when using the free AWS account or you can be charged.</li>
+            <li>Don't create multiple elastic IP addresses: this would incur a fee.</li>
+            <li>Do not click &quot;save&quot; instead of &quot;load&quot; when selecting a saved session or it will erase the saved session when using PuTTY.</li>
+        </ul>
+        <h1>Resources</h1>
+        <ul>
+            <li><a href="http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GetStarted.html">Set up on Elvenware</a></li>
+            <li><a href="http://bit.ly/ec2-aws">Charlie Calvert's slide deck</a></li>
+            <li><a href="http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html">Provision on Elvenware</a></li>
+        </ul>
+        <hr />
+        <p><a href="TOC.html" class="btn btn-primary">Back to Table of Contents</a></p>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

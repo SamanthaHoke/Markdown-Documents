@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>mongoDB</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Markdown Documents</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="TOC.html">Table of Contents</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="notesForProg219.html">Notes For Prog 219</a></li>
+
+                                <li><a href="commandLineNotes.html">Command Line Notes</a></li>
+                                <li><a href="creatingDifferentProjects.html">Creating Different Projects</a></li>
+                                <li><a href="angularNotes.html">Angular Notes</a></li>
+                                <li><a href="jekyllNotes.html">Jekyll Notes</a></li>
+                                <li><a href="mongoDB.html">MongoDB</a></li>
+                                <li><a href="unitTesting.html">Unit Testing</a></li>
+                                <li><a href="expressNotes.html">Express Notes</a></li>
+                                <li><a href="https://github.com/SamanthaHoke/Markdown-Documents/blob/master/EC2Notes.md">EC2 Notes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <h1 class="jumbotron">MongoDB and NoSQL</h1>
+        <hr />
+        <h2>NoSQL</h2>
+        <p>
+            NoSQL is a type of database design which instead of using a traditional relational structure uses some other variant of structure to store data.
+            Usually open-source and distributed.<br />
+            <a href="http://nosql-database.org/">Full Definition</a>
+        </p>
+        <h3>Notes:</h3>
+        <ul>
+            <li>
+                Alternate to relational SQL databases
+                <ul>
+                    <li>Isn't a replacement for SQL, has a different purpose and niche</li>
+                </ul>
+            </li>
+            <li>Not relational</li>
+            <li>
+                Based on documents instead of tables and rows.
+                <ul>
+                    <li>Often uses JSON</li>
+                </ul>
+            </li>
+            <li>
+                Good for things that do not usually work well in SQL:
+                <ul>
+                    <li>Working with large datasets with irregular shapes</li>
+                    <li>Fast performance when working with big data</li>
+                    <li>Scalable quickly</li>
+                    <li>Can be distributed</li>
+                </ul>
+            </li>
+        </ul>
+        <blockquote>
+            <p>Based on Charles Calvert's notes on <a href="http://bit.ly/elf-mongo">MongoDB</a></p>
+        </blockquote>
+        <h2>MongoDB</h2>
+        <p>
+            Collections are like tables.<br />
+            Documents are like records.
+        </p>
+        <p>
+            Packages needed:
+        </p>
+<pre><code>bower install angular --save
+bower install angular-mocks --save
+bower install angular-resource --save
+bower install bootstrap --save
+bower install jquery --save
+</code></pre>
+
+        <p>
+            Links to add:
+        </p>
+<pre><code> // Latest compiled and minified CSS
+link(rel='stylesheet', href='components/bootstrap/dist/css/bootstrap.min.css')
+// Optional theme
+link(rel='stylesheet', href='components/bootstrap/dist/css/bootstrap-theme.min.css')
+// JavaScript
+script(src='components/jquery/dist/jquery.js')
+script(src='components/bootstrap/dist/js/bootstrap.min.js')
+script(src='components/angular/angular.js')
+script(src='components/angular-resource/angular-resource.js')
+</code></pre>
+
+        <p>
+            Resource.js:
+        </p>
+<pre><code>angular.module('&lt;moduleName&gt;', ['ngResource'])
+.constant('CONFIG', {
+    DB_NAME: '&lt;yourDBName&gt;',
+    COLLECTION: '&lt;yourCollection&gt;',
+    API_KEY: '&lt;yourAPIKey&gt;'
+})
+</code></pre>
+
+        <p>
+            Retrieve the collection in the module's factory:
+        </p>
+<pre><code>.factory('Name', function ($resource, CONFIG) {
+    var localCollection = $resource(
+        'https://api.mongolab.com/api/1/databases/' + CONFIG.DB_NAME +
+        '/collections/' + CONFIG.COLLECTION + '/:id', {
+            apiKey: CONFIG.API_KEY
+        },
+        {
+            update: {method: 'PUT'}
+        });
+    //Normal Factory Code....
+</code></pre>
+
+        <blockquote>
+            <p>Based on Charles Calvert's instructions on <a href="http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongoDbStarter.html">creating an AngularMongoDBStarter</a></p>
+        </blockquote>
+        <h2>MongoLab</h2>
+        <blockquote>
+            <p>
+                MongoLab is a website to create and manage mongoDB databases.
+                <a href="https://mongolab.com/">MongoLab</a>
+            </p>
+        </blockquote>
+        <h3>Setup:</h3>
+        <ul>
+            <li>Create an account</li>
+            <li>
+                Create new database
+                <ul>
+                    <li>Select Amazon</li>
+                    <li>Single node</li>
+                    <li>Sandbox</li>
+                </ul>
+            </li>
+            <li>Click on database</li>
+            <li>
+                Create user
+                <ul>
+                    <li>Click users</li>
+                    <li>Add user</li>
+                    <li>Give username and password</li>
+                </ul>
+            </li>
+            <li>Add collection</li>
+            <li>Add document to collection</li>
+        </ul>
+        <h3>Get an API Key</h3>
+        <ul>
+            <li>Go to account page</li>
+            <li>Click on user</li>
+            <li>Find &quot;current key&quot; near the bottom</li>
+        </ul>
+        <hr />
+        <p><a href="TOC.html" class="btn btn-primary">Back to Table of Contents</a></p>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

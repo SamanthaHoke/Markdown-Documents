@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CreatingDifferentProjects</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Markdown Documents</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="TOC.html">Table of Contents</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="notesForProg219.html">Notes For Prog 219</a></li>
+
+                                <li><a href="commandLineNotes.html">Command Line Notes</a></li>
+                                <li><a href="creatingDifferentProjects.html">Creating Different Projects</a></li>
+                                <li><a href="angularNotes.html">Angular Notes</a></li>
+                                <li><a href="jekyllNotes.html">Jekyll Notes</a></li>
+                                <li><a href="mongoDB.html">MongoDB</a></li>
+                                <li><a href="unitTesting.html">Unit Testing</a></li>
+                                <li><a href="expressNotes.html">Express Notes</a></li>
+                                <li><a href="https://github.com/SamanthaHoke/Markdown-Documents/blob/master/EC2Notes.md">EC2 Notes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <h1 class="jumbotron">Creating Different Projects</h1>
+        <hr />
+        <h2>Create express project</h2>
+<pre><code>npm install -g express-generator
+express MyProject
+cd MyProject
+npm install
+</code></pre>
+
+        <h2>Create express with Mongo</h2>
+        <p>Follow same steps as for a simple express project and then:</p>
+        <ul>
+            <li>
+                Create a <code>.bowerrc</code> file with <br />
+                <code>
+                    {
+                    &quot;directory&quot;: &quot;public/components&quot;
+                    }
+                </code>
+            </li>
+            <li>
+                Install packages
+            </li>
+            <li>Add links in <code>index.jade</code> to jQuery, Bootstrap, Angular</li>
+            <li>Setup MongoLab</li>
+            <li>Create <code>resource.js</code> file in <em>Javascripts</em> folder.</li>
+            <li>Add your API key</li>
+        </ul>
+        <blockquote>
+            <p>
+                <a href="https://github.com/SamanthaHoke/Markdown-Documents/blob/master/mongoDB.md">See my MongoDB page</a> for packages, links, and resource.js code.
+            </p>
+        </blockquote>
+        <h2>Create Angular from scratch</h2>
+        <ul>
+            <li>Create a folder</li>
+            <li>Create index.html and index.js files</li>
+            <li><code>Bower init</code></li>
+            <li>Link to Angular on a CDN or use <code>bower install angular --save</code></li>
+            <li>
+                Run with <strong>WebStorm</strong> or create Python server script with:
+                <ul>
+                    <li><code>python -m http.server 30025</code></li>
+                </ul>
+            </li>
+        </ul>
+        <h2>Create Angular with Yeoman</h2>
+        <p>
+            When creating your first Angular project:
+        </p>
+<pre><code>npm install -g karma-cli grunt-cli bower yo generator-karma generator-angular
+</code></pre>
+
+        <p>When creating a new Angular project after the first time:</p>
+<pre><code>mkdir Week02-Angular
+cd Week02-Angular
+yo angular
+</code></pre>
+
+        <blockquote>
+            <p>Don't use Sass and Compass option without installing Ruby and Compass.</p>
+        </blockquote>
+        <p>To run project, use <code>grunt serve</code>.</p>
+        <p>To run tests, use <code>grunt test</code>.</p>
+        <hr />
+        <p><a href="TOC.html" class="btn btn-primary">Back to Table of Contents</a></p>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

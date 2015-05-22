@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>AngularNotes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Markdown Documents</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="TOC.html">Table of Contents</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="notesForProg219.html">Notes For Prog 219</a></li>
+
+                                <li><a href="commandLineNotes.html">Command Line Notes</a></li>
+                                <li><a href="creatingDifferentProjects.html">Creating Different Projects</a></li>
+                                <li><a href="angularNotes.html">Angular Notes</a></li>
+                                <li><a href="jekyllNotes.html">Jekyll Notes</a></li>
+                                <li><a href="mongoDB.html">MongoDB</a></li>
+                                <li><a href="unitTesting.html">Unit Testing</a></li>
+                                <li><a href="expressNotes.html">Express Notes</a></li>
+                                <li><a href="https://github.com/SamanthaHoke/Markdown-Documents/blob/master/EC2Notes.md">EC2 Notes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <h1 class="jumbotron">Angular Notes</h1>
+        <hr />
+        <h2>Angular Setup</h2>
+        <h3>Steps (Simple):</h3>
+        <ul>
+            <li>Create a folder</li>
+            <li>Create an index.html and index.js files</li>
+            <li><code>Bower install jquery --save</code> or use a CDN</li>
+        </ul>
+        <h3>Steps (Yeoman):</h3>
+<pre><code>npm install -g grunt-cli bower yo generator-karma generator-angular
+mkdir Week02-Angular
+cd Week02-Angular
+yo angular
+</code></pre>
+
+        <h2>Main pieces:</h2>
+        <h3>JavaScript Module Pattern</h3>
+<pre><code>(function(){//Place code here})();
+</code></pre>
+
+        <p>Used to create self-contained modules in JavaScript. Allow data hiding and encapsulation.</p>
+        <h3>Angular Modules</h3>
+<pre><code>var app = angular.module('name', []);
+</code></pre>
+
+        <blockquote>
+            <p>
+                Place dependency module names in quotes in the []<br />
+                The empty [] are required when creating new modules, but <strong>must not</strong> be used when referencing an existing module.
+            </p>
+        </blockquote>
+        <p>Modules can have factories and controllers.</p>
+<pre><code>app.factory('Name', function(){return {prop: value}});
+app.controller('Name', function(){});
+</code></pre>
+
+        <blockquote>
+            <p>
+                If the module has dependencies, place the <em>unquoted</em>
+                names of the dependencies in the function's () as parameters.
+                <code>app.controller('Name', function(depend1, depend2){});</code>
+            </p>
+        </blockquote>
+        <p>Inside the controller, use either $scope or controllerAs to pass data to the view.</p>
+        <p>
+            <em>$scope</em><br />
+            In controller function:
+        </p>
+<pre><code>$scope.property = value;
+</code></pre>
+
+        <p>
+            In the HTML:
+        </p>
+<pre><code>&lt;div ng-controller=&quot;Name as NameControl&quot;&gt;
+    &lt;p&gt; {{$scope.property}} &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+        <blockquote>
+            <p>$scope is going to be deprecated. Better to use controllerAs.</p>
+            <p>When using $scope, must pass $scope in as a parameter of the controller function.</p>
+        </blockquote>
+        <p>
+            <em>ControllerAs</em><br />
+            In controller function:
+        </p>
+<pre><code>var NameControl = this;
+NameControl.property = value;  
+</code></pre>
+
+        <p>
+            In the HTML:
+        </p>
+<pre><code>&lt;div ng-controller=&quot;Name as NameControl&quot;&gt;
+    &lt;p&gt; {{NameControl.property}} &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+        <h3>Directives</h3>
+        <blockquote>
+            <p>Directives appear in the HTML file, usually as attributes of HTML elements. Can also be used as custom element names. </p>
+            <p>Named as ng-<em>name</em> or data-ng-<em>name</em>.</p>
+        </blockquote>
+        <p>
+            <strong>ng-app</strong><br />
+            <strong>ng-app = &quot;Name&quot;</strong><br />
+            Place as attribute of the body tag.<br />
+            Identifies the module used as the app for the page.
+        </p>
+        <p>
+            <strong>ng-controller = &quot;ControllerName as contName&quot;</strong><br />
+            Place as attribute of a div tag.<br />
+            Identifies controller for this div and give controller name to
+            use with controllerAs pattern.
+        </p>
+        <p>
+            <strong>ng-repeat = &quot;item in itemCollection&quot;</strong>
+            Place as attribute of list or other division to repeat.<br />
+            Makes the given list or division repeat for each <em>item</em> in <em>itemCollection</em>.
+        </p>
+        <p>
+            <strong>ng-model</strong><br />
+            Place as attribute of input or output element.<br />
+            Gives name of model to which to bind.
+        </p>
+        <p>
+            <strong>ng-submit</strong><br />
+            On a form as an attribute, specifies the function to run on submit.
+        </p>
+        <h3>Expressions</h3>
+        <p>Expressions can appear in attributes or where regular text would appear.</p>
+        <p>
+            <strong>Format:</strong>
+        </p>
+<pre><code>{{expression}}
+{{$scope.prop}}
+{{nameControl.prop}}
+{{model}}
+</code></pre>
+
+        <blockquote>
+            <p>
+                $scope can be omitted.
+            </p>
+        </blockquote>
+        <p>
+            <strong>Examples:</strong>
+        </p>
+<pre><code>&lt;p&gt;{{bookControl.Title}}&lt;/p&gt;
+&lt;span class=&quot;done-{{item.done}}&quot;/&gt;
+</code></pre>
+
+        <h2>Useful Resources</h2>
+        <ul>
+            <li><a href="https://docs.angularjs.org/guide">Angular Documentation</a></li>
+            <li><a href="http://www.w3schools.com/angular/">Angular on W3Schools</a></li>
+            <li><a href="http://www.codecademy.com/en/learn/learn-angularjs">Angular on Code Academy</a></li>
+        </ul>
+        <hr />
+        <p><a href="TOC.html" class="btn btn-primary">Back to Table of Contents</a></p>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

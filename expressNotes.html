@@ -1,13 +1,10 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-<title> Markdown Documents </title>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="bootstrap.min.css">
-
-
+    <title>expressNotes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body>
     <div class="container">
@@ -27,12 +24,13 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="TOC.html">Table of Contents</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="notesForProg219.html">Notes For Prog 219</a></li>
+
                                 <li><a href="commandLineNotes.html">Command Line Notes</a></li>
                                 <li><a href="creatingDifferentProjects.html">Creating Different Projects</a></li>
                                 <li><a href="angularNotes.html">Angular Notes</a></li>
@@ -44,20 +42,59 @@
                             </ul>
                         </li>
                     </ul>
-                   
+
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <div class="jumbotron">
-            <h1>Markdown Documents </h1>
-            <p class=""> Welcome to my site to store markdown documents. </p>
-            <p> This is a GitHub based site. </p>
-        </div>    
-        <p> This site is a collection of documents I created for my Prog 219 class at Bellevue College.</p>
-        <a class="btn btn-primary" href="TOC.html">Start Reading</a>
+        <h1 class="jumbotron">Express</h1>
+        <h2>Creating express projects</h2>
+        <h3>Create express project</h3>
+<pre><code>npm install -g express-generator
+express MyProject
+cd MyProject
+npm install
+</code></pre>
+
+        <h3>Create express with Mongo</h3>
+        <p>Follow same steps as for a simple express project and then:</p>
+        <ul>
+            <li>
+                Create a <code>.bowerrc</code> file with <br />
+                <code>
+                    {
+                    &quot;directory&quot;: &quot;public/components&quot;
+                    }
+                </code>
+            </li>
+            <li>
+                Install packages
+            </li>
+            <li>Add links in <code>index.jade</code> to jQuery, Bootstrap, Angular</li>
+            <li>Setup MongoLab</li>
+            <li>Create <code>resource.js</code> file in <em>Javascripts</em> folder.</li>
+            <li>Add your API key</li>
+        </ul>
+        <blockquote>
+            <p>
+                <a href="https://github.com/SamanthaHoke/Markdown-Documents/blob/master/mongoDB.md">See my MongoDB page</a> for packages, links, and resource.js code.
+            </p>
+        </blockquote>
+        <h2>Routes</h2>
+        <p>Adding a route involves editing <code>routes/index.js</code> file the the project. </p>
+        <p><strong>Sample route:</strong></p>
+<pre><code>var express = require('express');
+var router = express.Router();
+/* GET home page. */
+router.get('/', function(req, res) {
+res.render('index', { title: 'Test Live' });
+});
+</code></pre>
+
+        <p>
+            The first parameter to <code>router.get()</code> is the pattern of the route given, such as the default <code>'/'</code> or <code>'/:id'</code>.
+            The <code>req</code> object includes information about the request, including parameters from the query string. The <code>res</code> object sends a response or renders a file such as a jade file.
+        </p>
     </div>
-
-
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
@@ -65,3 +102,4 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

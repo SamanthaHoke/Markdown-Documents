@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>commandLineNotes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Markdown Documents</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="TOC.html">Table of Contents</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="notesForProg219.html">Notes For Prog 219</a></li>
+                                
+                                <li><a href="commandLineNotes.html">Command Line Notes</a></li>
+                                <li><a href="creatingDifferentProjects.html">Creating Different Projects</a></li>
+                                <li><a href="angularNotes.html">Angular Notes</a></li>
+                                <li><a href="jekyllNotes.html">Jekyll Notes</a></li>
+                                <li><a href="mongoDB.html">MongoDB</a></li>
+                                <li><a href="unitTesting.html">Unit Testing</a></li>
+                                <li><a href="expressNotes.html">Express Notes</a></li>
+                                <li><a href="https://github.com/SamanthaHoke/Markdown-Documents/blob/master/EC2Notes.md">EC2 Notes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <h1 class="jumbotron">Command Line Notes</h1>
+        <hr />
+        <h2>General Windows commands</h2>
+        <p>
+            <strong>cd</strong><br />
+            Change directory
+        </p>
+        <p>
+            <strong>dir /A</strong><br />
+            List files and subfolders in current folder, including hidden folders
+        </p>
+        <p>
+            <strong>mkdir <em>name</em></strong><br />
+            Make directory with given name in current directory
+        </p>
+        <p>
+            <strong>type</strong><br />
+            Prints the contents of a file
+        </p>
+        <p>
+            <strong>notepad</strong><br />
+            <strong>notepad++</strong><br />
+            Use a program name that is in your $PATH to open it in a different program
+        </p>
+        <p>
+            <strong>echo &quot;Text&quot; &gt; file.txt</strong><br />
+            Create or overwrite a file with the given text
+        </p>
+        <p>
+            <strong>SET</strong><br />
+            Shows all environment variables
+        </p>
+        <p>
+            <strong>robocopy oldFolderName newFolderName /MIR</strong><br />
+            Creates a copy of a folder structure into the newly named folder.
+        </p>
+        <h2>General Linux commands</h2>
+        <p>
+            <strong>ls -la</strong><br />
+            Lists directory contents, including hidden folders.
+        </p>
+        <p>
+            <strong>cd</strong><br />
+            Changes directory. Used without a directory name, or <code>.</code> or <code>..</code>, returns directly to the Home directory.
+        </p>
+        <p>
+            <strong>pwd</strong><br />
+            Prints full working directory.
+        </p>
+        <p>
+            <strong>cp</strong><br />
+            Copies a file. Use with the old file name, then the new file location. Represent the file has the same name in the new location with <code>/.</code>.
+            Eg. <code>cp oldFile.txt Documents/.</code> will copy the text file into the Documents folder using the same filename.
+        </p>
+        <p>
+            <strong>mv</strong><br />
+            Moves a file to the new location given.
+        </p>
+        <p>
+            <strong>rm -r</strong><br />
+            Removes a directory recusively.
+        </p>
+        <p>
+            <strong>mkdir</strong><br />
+            Creates a directory.
+        </p>
+        <p>
+            <strong>sudo</strong><br />
+            Used to have super user privileges temporarily. Used when working with files or directories outside your home directory.
+        </p>
+        <p>
+            <strong>chmod</strong><br />
+            Modify file access privileges.
+        </p>
+        <p>
+            <strong>chown</strong><br />
+            Change file owner.
+        </p>
+        <p>
+            <strong>fs</strong><br />
+            Show free space on drive.
+        </p>
+        <h2>General Git Bash commands</h2>
+        <p>
+            <strong>ls -a</strong><br />
+            List files and folders in current folder, including hidden folders
+        </p>
+        <p>
+            <strong>cd</strong><br />
+            Change directory
+        </p>
+        <p>
+            <strong>mkdir</strong><br />
+            <strong>echo</strong><br />
+            Work as in Windows
+        </p>
+        <h2>Git</h2>
+        <p>
+            <strong>git init</strong><br />
+            Makes a folder a git repository
+        </p>
+        <p>
+            <strong>git clone</strong><br />
+            Pulls down a local copy of an existing repository
+        </p>
+        <p>
+            <strong>git status</strong><br />
+            Check repository status
+        </p>
+        <p>
+            <strong>git pull</strong><br />
+            Pulls down master copy of a repository
+        </p>
+        <p>
+            <strong>git add --all .</strong><br />
+            Adds untracked files, including removed files
+        </p>
+        <p>
+            <strong>git commit -m &quot;message&quot;</strong><br />
+            Commit files to the local repository
+        </p>
+        <p>
+            <strong>git push</strong><br />
+            <strong>git push -u remote origin</strong><br />
+            Push files up to the remote repository
+        </p>
+        <p>
+            <strong>git config --global user.name &quot;FIRST<em>NAME LAST</em>NAME&quot;</strong><br />
+            <strong>git config --global user.email MY_NAME@example.com</strong><br />
+            Set up configurations
+        </p>
+        <p>
+            <strong>git revert</strong><br />
+            Undo a local commit
+        </p>
+        <p>
+            <strong>git reset</strong> <br />
+            Remove files added to track
+        </p>
+        <p>
+            <strong>git branch</strong><br />
+            List branches
+        </p>
+        <p>
+            <strong>git checkout <em>branch</em></strong><br />
+            Change to another branch
+        </p>
+        <p>
+            <strong>git checkout -b <em>branch</em> <em>tag</em></strong><br />
+            Check out into a new branch. Remove -b to checkout existing branch
+        </p>
+        <p>
+            <strong>git checkout <em>branch</em> <em>fileName(s)</em></strong><br />
+            Checkout specific files from one branch to add to your current branch
+        </p>
+        <p>
+            <strong>git branch -d <em>branchName</em></strong><br />
+            Deletes named branch
+        </p>
+        <p>
+            <strong>git merge <em>branchToMerge</em></strong><br />
+            Merges named branch into the current branch
+        </p>
+        <p>
+            <strong>git tag -a v00.01.00 -m &quot;Message&quot;</strong><br />
+            <strong>git push origin v00.01.00</strong><br />
+            Add a tag and push it to the origin
+        </p>
+        <p>
+            <strong>git config --global push.default simple</strong><br />
+            Set push default
+        </p>
+        <p>
+            <strong>git rm -r <em>folder</em></strong><br />
+            <strong>git rm -r --cached <em>folder</em></strong><br />
+            Removes a folder from the remote repository.<br />
+            <code>--cached</code> keeps the local copy.
+        </p>
+        <p>
+            <strong>git mv oldfolder newfolder</strong><br />
+            Rename a folder.
+        </p>
+        <h2>Node</h2>
+        <p>
+            <strong>npm install -g express-generator</strong><br />
+            install express-generator globally
+        </p>
+        <p>
+            <strong>npm install</strong><br />
+            Install node in a project
+        </p>
+        <p>
+            <strong>npm start</strong> <br />
+            Start an express project
+        </p>
+        <p>
+            <strong>npm list -g --depth=0</strong><br />
+            List globally installed packages
+        </p>
+        <h2>Express</h2>
+        <p>
+            <strong>express MyProject</strong><br />
+            Create new express project
+        </p>
+        <h2>Bower</h2>
+        <blockquote>
+            <p>Bower is a front-end library helper</p>
+        </blockquote>
+        <p>
+            <strong>npm install -g bower</strong><br />
+            Installs bower globally. Use only once.
+        </p>
+        <p>
+            <strong>bower init</strong><br />
+            Initializes bower in a project. Creates a <code>bower.json</code> file.
+        </p>
+        <blockquote>
+            <p>Take the recommended settings to list dependencies and ignore common files.</p>
+        </blockquote>
+        <p>
+            <strong>bower install jquery --save</strong><br />
+            <strong>bower install angular --save</strong><br />
+            Installs a local copy of the requested framework. <code>--save</code> sets the framework in the dependencies list.
+        </p>
+        <p>
+            <strong>bower install bootswatch-dist#yeti</strong><br />
+            Installs a bootstrap theme using bootswatch. Replace &quot;yeti&quot; with the name of the theme desired.
+        </p>
+        <h2>Grunt</h2>
+        <blockquote>
+            <p>Grunt is a task runner for JavaScript </p>
+        </blockquote>
+        <p>
+            <strong>grunt</strong><br />
+            Builds project
+        </p>
+        <p>
+            <strong>grunt test</strong><br />
+            Runs unit tests
+        </p>
+        <p>
+            <strong>grunt serve</strong><br />
+            Runs project on localhost port.
+        </p>
+        <blockquote>
+            <p>To set the port, go into the <strong>GruntFile.js</strong> in your project, find the connection options object where <strong>port</strong> is listed. Change the port number to any number you prefer.</p>
+        </blockquote>
+        <h2>Karma</h2>
+        <blockquote>
+            <p>Karma is a unit test runner which constantly runs the tests in the background.</p>
+        </blockquote>
+        <hr />
+        <p><a href="TOC.html" class="btn btn-primary">Back to Table of Contents</a></p>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

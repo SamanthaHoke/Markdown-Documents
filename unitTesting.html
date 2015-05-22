@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>unitTesting</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Markdown Documents</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="TOC.html">Table of Contents</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="notesForProg219.html">Notes For Prog 219</a></li>
+
+                                <li><a href="commandLineNotes.html">Command Line Notes</a></li>
+                                <li><a href="creatingDifferentProjects.html">Creating Different Projects</a></li>
+                                <li><a href="angularNotes.html">Angular Notes</a></li>
+                                <li><a href="jekyllNotes.html">Jekyll Notes</a></li>
+                                <li><a href="mongoDB.html">MongoDB</a></li>
+                                <li><a href="unitTesting.html">Unit Testing</a></li>
+                                <li><a href="expressNotes.html">Express Notes</a></li>
+                                <li><a href="https://github.com/SamanthaHoke/Markdown-Documents/blob/master/EC2Notes.md">EC2 Notes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <h1 class="jumbotron">Unit testing</h1>
+        <h2>Main Points</h2>
+        <ul>
+            <li>
+                Write test first, then write code, then refactor
+                <ul>
+                    <li><em>Test Driven Design</em></li>
+                </ul>
+            </li>
+            <li>Test individual objects, smallest discrete pieces</li>
+            <li>Use mock objects to simulate dependencies</li>
+            <li>Supports refactoring code</li>
+            <li>Test boundary conditions </li>
+        </ul>
+        <p>Tests act as documentation and specification for a project. They make it easier to extend and refactor code and improve reusability.</p>
+        <p>
+            If writing the test is too difficult or complex, the code itself is probably overly complex and not very reusable.
+        </p>
+        <blockquote>
+            <p>Encapsulation must be preserved to allow testable code. Objects should be as loosely-coupled as possible.</p>
+        </blockquote>
+        <p>Public interfaces, not private methods should be tested.</p>
+        <blockquote>
+            <p>Based on Charles Calvert's <a href="http://bit.ly/1dTjs8h">Unit Tests: Part 01</a></p>
+        </blockquote>
+        <h2>Jasmine</h2>
+        <p>Jasmine is a Unit Test framework for JavaScript.</p>
+        <h3>Install</h3>
+        <p>
+            Installing Jasmine:
+        </p>
+<pre><code>npm install -D jasmine
+npm install -g jasmine
+</code></pre>
+
+        <p>
+            Yeoman generator:
+        </p>
+<pre><code>npm install -g generator-jasmine
+</code></pre>
+
+        <p>
+            Add jasmine to a project:
+        </p>
+<pre><code>yo jasmine
+</code></pre>
+
+        <p>
+            Go to <code>test/bower.json</code> and change Jasmine version to 2.3.0
+        </p>
+        <p>
+            Add chai to <code>bower</code>: Run <code>bower install chai --save</code><br />
+            Run <code>bower install</code> <em>in the test folder!</em>
+        </p>
+        <p>
+            In <code>test/index.html</code> add these script tags:
+        </p>
+<pre><code>&lt;script src=&quot;bower_components/jasmine/lib/jasmine-core/boot.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;bower_components/chai/chai.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+        <h3>Set up Grunt</h3>
+        <p>
+            Grunt is a task runner.
+        </p>
+<pre><code>npm install -g generator-gruntfile
+npm install grunt --save-dev
+npm install grunt-contrib-qunit --save-dev
+npm install grunt-contrib-jshint --save-dev
+npm install grunt-contrib-watch --save-dev
+yo gruntfile
+</code></pre>
+
+        <p>
+            In <code>GruntFile.js</code>, modify the <code>jshint options</code> section to be:
+        </p>
+<pre><code>browser: true,
+globals: { jQuery: true, chai: true, angular: true },
+boss: true,
+ignores: [
+    '**/components/**',
+    '**/bower_components/**',
+    '**/node_modules/**'
+],
+reporter: 'checkstyle',
+reporterOutput: 'result.xml'
+</code></pre>
+
+        <p>Run with <code>grunt jshint</code></p>
+        <h3>Jasmine syntax</h3>
+        <p>
+            All tests are contained in <em>suites</em>. Suites are created with the <strong>describe()</strong> function. The describe function takes as parameters a string name for the suite and an anonymous function. Variables declared in the <strong>describe()</strong> function's anonymous function are available to all specs within it.
+        </p>
+<pre><code>describe(&quot;Suite name&quot;, function(){});
+</code></pre>
+
+        <p>
+            In the anonymous function, separate tests are created for different functions and functionality using the <strong>it()</strong> function. The it function takes as parameters a string describing what the test will prove and another anonymous function. Tests defined by the <strong>it()</strong> function are called <em>specs</em>.
+        </p>
+<pre><code>it(&quot;proves true is true&quot;, function(){});
+</code></pre>
+
+        <p>
+            Inside the <strong>it()</strong> function's anonymous function are placed your actual tests.
+            The main function for testing is the <strong>expect()</strong> function. It takes as a parameter the actual result or value to be tested. Chained onto the <strong>expect()</strong> function are various methods which test various conditions. These methods take as a parameter the expected value or result desired.
+        </p>
+<pre><code>expect(true).toBe(true);
+</code></pre>
+
+        <p>
+            These chained methods are called <em>matchers</em>.
+            <strong>Examples:</strong>
+        </p>
+<pre><code>toBe()
+</code></pre>
+
+        <p>
+            Acts like a strict equals (<code>===</code>)
+        </p>
+<pre><code>toEqual()
+</code></pre>
+
+        <p>
+            Works for simple variables, literals, and objects.
+        </p>
+<pre><code>toMatch()
+</code></pre>
+
+        <p>
+            Used with regular expressions
+        </p>
+<pre><code>toBeDefined()
+toBeUndefined()
+</code></pre>
+
+        <p>
+            Used to check if a variable is undefined.
+        </p>
+<pre><code>toBeNull()
+</code></pre>
+
+        <p>
+            Checks for nulls.
+        </p>
+<pre><code>toBeTruthy()
+toBeFalsy()
+</code></pre>
+
+        <p>
+            Checks if a variable or object would be cast to true or false.<br />
+            <a href="http://www.sitepoint.com/javascript-truthy-falsy">More information on truthy and falsy values</a>
+        </p>
+<pre><code>toContain()
+</code></pre>
+
+        <p>
+            Checks an array for a value.
+        </p>
+<pre><code>toBeLessThan()
+toBeGreaterThan()
+</code></pre>
+
+        <p>
+            Compares numeric values.
+        </p>
+<pre><code>toBeCloseTo()
+</code></pre>
+
+        <p>
+            Checks numeric values are approximately the same. (Good for testing the results of floating point math.)
+        </p>
+<pre><code>toThrow()
+</code></pre>
+
+        <p>
+            Used to check that any type of error is thrown. Used with no parameters.
+        </p>
+<pre><code>toThrowError()
+</code></pre>
+
+        <p>
+            Used to check that a specific error is thrown. Used with the name of the type of error.
+        </p>
+        <hr />
+        <p>
+            Jasmine also provides functions which can execute before each test is run, ensuring each test is run with the same set up, or run just once before all the tests are run.
+        </p>
+<pre><code>beforeEach()
+beforeAll()
+</code></pre>
+
+        <p>
+            There are also their post-execution counterparts:
+        </p>
+<pre><code>afterEach()
+afterAll()
+</code></pre>
+
+        <p>
+            <strong>Example:</strong>
+        </p>
+<pre><code>var scope, localController;
+beforeEach(module('moduleName'));
+    // Initialize the controller and a mock scope
+    beforeEach(inject(function($controller, $rootScope) {
+        scope = $rootScope.$new();
+        localController = $controller('controllerName', {
+            $scope: scope
+        });
+    }));
+</code></pre>
+
+        <p>
+            This code ensures that the module being tested is injected into each test and initializes a mock scope. This allows the tests to interact with the controller and scope.
+            This code would be placed at the top of the <strong>describe()</strong> function's anonymous function.
+        </p>
+        <h2><a href="http://jasmine.github.io/2.3/introduction.html">Full documentation</a></h2>
+        <p><a href="TOC.html" class="btn btn-primary">Back to Table of Contents</a></p>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

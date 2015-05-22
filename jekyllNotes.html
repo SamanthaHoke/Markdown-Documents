@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jekyllNotes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Markdown Documents</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="TOC.html">Table of Contents</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="notesForProg219.html">Notes For Prog 219</a></li>
+
+                                <li><a href="commandLineNotes.html">Command Line Notes</a></li>
+                                <li><a href="creatingDifferentProjects.html">Creating Different Projects</a></li>
+                                <li><a href="angularNotes.html">Angular Notes</a></li>
+                                <li><a href="jekyllNotes.html">Jekyll Notes</a></li>
+                                <li><a href="mongoDB.html">MongoDB</a></li>
+                                <li><a href="unitTesting.html">Unit Testing</a></li>
+                                <li><a href="expressNotes.html">Express Notes</a></li>
+                                <li><a href="https://github.com/SamanthaHoke/Markdown-Documents/blob/master/EC2Notes.md">EC2 Notes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <h1 class="jumbotron">Jekyll Notes</h1>
+        <h3>A collection of notes for installing and running Jekyll</h3>
+        <h2>Installation</h2>
+        <ul>
+            <li>
+                Make sure Ruby is installed
+                <ul>
+                    <li><code>ruby --version</code></li>
+                    <li>If it is not installed go to the <a href="https://www.ruby-lang.org/en/downloads/">Ruby Website</a></li>
+                </ul>
+            </li>
+            <li>
+                <p><code>gem install bundler</code></p>
+            </li>
+            <li>
+                <p>In your repository, make a file called <strong>Gemfile</strong> with the following content:</p>
+<pre><code>source 'https://rubygems.org'
+gem 'github-pages'
+</code></pre>
+
+            </li>
+            <li>
+                Run <code>bundle install</code>
+                <ul>
+                    <li>This may need the <a href="https://www.ruby-lang.org/en/downloads/">Ruby Devkit</a></li>
+                    <li>
+                        To install the devKit, follow the instructions <a href="http://github.com/oneclick/rubyinstaller/wiki/Development-Kit">here</a>
+                        <ul>
+                            <li>Download and unzip the Devkit</li>
+                            <li>Run <code>ruby dk.rb init</code></li>
+                            <li>Run <code>ruby dk.rb install</code></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <h2>Running</h2>
+        <p>
+            Run the following command in the root directory in the <code>gh-pages</code> branch.<br />
+            <code>bundle exec jekyll serve</code>
+        </p>
+        <blockquote>
+            <p>Serves on port 4000</p>
+        </blockquote>
+        <h2>Update</h2>
+        <p>Update with <code>bundle update</code> and <code>bundle update github-pages</code></p>
+        <h2>FrontMatter</h2>
+        <p>
+            Place at the top of every markdown page:
+        </p>
+<pre><code>---
+title: This is my title
+layout: post
+---
+</code></pre>
+
+        <blockquote>
+            <p>Can leave space between <code>---</code> empty.</p>
+        </blockquote>
+        <h2>Links</h2>
+        <p>For full instructions, go to <a href="https://help.github.com/articles/using-jekyll-with-pages/">Github page's instructions</a></p>
+        <p>Also look at the <a href="https://help.github.com/categories/github-pages-basics/">full list of help topics for Github Pages</a></p>
+        <p><a href="TOC.html" class="btn btn-primary">Back to Table of Contents</a></p>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
