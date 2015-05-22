@@ -14,6 +14,7 @@
 	 - or use an existing security group
  - Review and launch your instance.
  - Download the key pair
+
 ##Set up elastic IP Address
  - Go to **elastic IP** from the main EC2 dashboard. 
  - If you have not already created an elastic IP, create one and associate it with your instance
