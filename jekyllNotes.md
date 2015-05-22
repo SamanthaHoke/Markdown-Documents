@@ -47,3 +47,8 @@ Place at the top of every markdown page:
 For full instructions, go to [Github page's instructions](https://help.github.com/articles/using-jekyll-with-pages/)
 
 Also look at the [full list of help topics for Github Pages](https://help.github.com/categories/github-pages-basics/)
+
+
+
+
+[Back to README.md](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/README.md)

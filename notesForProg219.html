@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>notesForProg219</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>General Notes for Prog 219</h1>
+        <hr />
+        <h2>Set up PuTTY</h2>
+        <ul>
+            <li>
+                Install PuTTY
+                <ul>
+                    <li>If you are the admin on your computer, use the installer. Otherwise, use the zip file.</li>
+                    <li><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">Download the zip or installer</a></li>
+                </ul>
+            </li>
+            <li>Create SSH variable as the location of plink.exe</li>
+            <li>Run <strong>puttygen</strong></li>
+            <li>
+                Create a new key pair.
+                <ul>
+                    <li><em>It's a good idea to have a folder in your home directory to store data like this.</em></li>
+                </ul>
+            </li>
+            <li>Load public key to <strong>BitBucket</strong></li>
+            <li>Change <strong>.gitconfig</strong> file to use SSH URL</li>
+            <li><code>plink bitbucket.org</code></li>
+            <li><code>git config --global push.default simple</code></li>
+            <li>Run Pageant and load private key <em>each time you start the computer.</em></li>
+        </ul>
+        <h2>Global Packages to Install</h2>
+        <p>
+            General packages:
+        </p>
+<pre><code>npm install -g bower
+npm install -g jshint
+npm install -g nodemon
+</code></pre>
+
+        <p>
+            Express:
+        </p>
+<pre><code>npm install -g express-generator
+</code></pre>
+
+        <p>
+            Angular:
+        </p>
+<pre><code>npm install -g yo
+npm install -g grunt-cli
+npm install -g generator-angular 
+npm install -g generator-karma 
+npm install -g karma-cli
+</code></pre>
+
+        <p>
+            Jasmine:
+        </p>
+<pre><code>npm install -D jasmine
+npm install -g jasmine
+</code></pre>
+
+        <p>
+            Jasmine with Yeoman:
+        </p>
+<pre><code>npm install -g generator-jasmine
+</code></pre>
+
+        <h2>$PATH</h2>
+        <p>The <strong>$PATH</strong> variable should include:</p>
+        <ul>
+            <li>Git cmd</li>
+            <li>Text editor like Geany or Notepad++</li>
+            <li>npm</li>
+            <li>Your dosalias file's folder</li>
+            <li>Node</li>
+            <li>PuTTY</li>
+            <li>Pageant</li>
+        </ul>
+        <h2>GIT_SSH</h2>
+        <p>The GIT_SSH variable should be set to the folder of plink.exe on your machine.</p>
+        <h2>Setting up cmd.exe shortcut</h2>
+        <p>
+            To create a command prompt shortcut that automatically runs you <strong>dosalias</strong> file:
+        </p>
+        <ul>
+            <li>Open <strong>cmd.exe</strong> and right click to pin to desktop</li>
+            <li>Right click the shortcut and open the properties window</li>
+            <li>Set the target to <code>&lt;location of cmd.exe&gt; /k &lt;location of dosalias&gt;</code></li>
+        </ul>
+        <p>
+            Example target:
+        </p>
+<pre><code>C:\Windows\System32\cmd.exe /k %USERPROFILE%\Bin\DosAlias.bat
+</code></pre>
+
+        <h2>PROMPT</h2>
+        <p>
+            You can reset your prompt at  the command line using the %PROMPT% variable.
+            Full directions are given in <a href="http://www.hanselman.com/blog/ABetterPROMPTForCMDEXEOrCoolPromptEnvironmentVariablesAndANiceTransparentMultiprompt.aspx">Scott Hanselman's blog article</a>.
+        </p>
+        <p><strong>Example:</strong></p>
+<pre><code>set prompt=[%computername%] $p$_$g
+</code></pre>
+
+        <p>This will display the computer name, the path, a carriage return, and then a greater than sign. </p>
+        <blockquote>
+            <p>There <em>cannot</em> be spaces between the variable name, the equal sign, or the start of the variable definition. Spaces will cause a new, different variable to be created instead of overwriting the current <strong>prompt</strong> variable. </p>
+        </blockquote>
+        <p>
+            <strong>$p</strong><br />
+            Shows the current path
+        </p>
+        <p>
+            <strong>$_</strong><br />
+            Prints a carriage return
+        </p>
+        <p>
+            <strong>$g</strong><br />
+            Prints a greater than sign: <code>&gt;</code>
+        </p>
+        <h2>Deleting Deeply Nested Folder</h2>
+        <p>Some projects, like Angular with Yeoman, create extremely deeply nested folders which are very difficult to delete. To remove these folders, use <em>Rimraf</em>, an npm package.</p>
+        <p>
+            To install:
+        </p>
+<pre><code>npm install -g rimraf
+</code></pre>
+
+        <p>
+            To use:
+        </p>
+<pre><code>rimraf folderName
+</code></pre>
+
+        <h2>Clearing Browser Cache</h2>
+        <p>
+            If you are running a project and you are having problems appear in the console or in Jasmine tests which you have changed in the code, look in the developer tools source tab.<br />
+            If the code in the sources tab is not the same as the code in your actual project, you may need to clear your browser's cache.
+        </p>
+        <p>
+            <strong>In Chrome:</strong><br />
+            Use Ctrl+Shift+Delete. <br />
+            Choose only <strong>cached images and files</strong>.
+        </p>
+        <p>Then reload your page with <strong>F5</strong> or the refresh button.</p>
+        <p>This clears any saved files from old versions of your projects or other projects with the same file names. </p>
+        <hr />
+        <p><a href="index.html" class="btn btn-primary">Back to Home</a></p>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

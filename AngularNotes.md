@@ -1,10 +1,10 @@
-#Angular and Mongo Notes
+#Angular Notes
 -----------
 ##Angular Setup
 ###Steps (Simple):
 - Create a folder
 - Create an index.html and index.js files
-- Bower install jquery or use a CDN
+- `Bower install jquery --save` or use a CDN
 
 ###Steps (Yeoman):
 	npm install -g grunt-cli bower yo generator-karma generator-angular
@@ -18,7 +18,9 @@
 Used to create self-contained modules in JavaScript. Allow data hiding and encapsulation.
 ###Angular Modules
 	var app = angular.module('name', []);
->Place dependency module names in quotes in the []
+>Place dependency module names in quotes in the []  
+>The empty [] are required when creating new modules, but **must not** be used when referencing an existing module.
+
 
 Modules can have factories and controllers.
 
@@ -60,17 +62,19 @@ In the HTML:
 	</div>
 
 
-###Declarations
->Declarations appear in the HTML file.  
+###Directives
+>Directives appear in the HTML file, usually as attributes of HTML elements. Can also be used as custom element names. 
+>
+>Named as ng-*name* or data-ng-*name*.
 
 **ng-app**  
 **ng-app = "Name"**  
-Place as attributes of the body tag.  
-Identify the module used as the app for the page.
+Place as attribute of the body tag.  
+Identifies the module used as the app for the page.
 
 **ng-controller = "ControllerName as contName"**  
 Place as attribute of a div tag.  
-Identify controller for this div and give controller name to 
+Identifies controller for this div and give controller name to 
 use with controllerAs pattern.  
 
 **ng-repeat = "item in itemCollection"**
@@ -103,3 +107,15 @@ Expressions can appear in attributes or where regular text would appear.
 
 	<p>{{bookControl.Title}}</p>
 	<span class="done-{{item.done}}"/>
+
+##Useful Resources
+ - [Angular Documentation](https://docs.angularjs.org/guide)
+ - [Angular on W3Schools](http://www.w3schools.com/angular/)
+ - [Angular on Code Academy](http://www.codecademy.com/en/learn/learn-angularjs)
+
+
+
+
+----------
+
+[Back to README.md](https://github.com/SamanthaHoke/Markdown-Documents/blob/master/README.md)
