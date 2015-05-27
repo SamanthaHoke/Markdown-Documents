@@ -76,6 +76,9 @@ Create a **data** folder with a **db** folder inside of it in your home director
 Run mongo.exe giving it as a parameter the location of your **data** folder.
 >Also put mongo on your path.
 
+
+>Instructions are given [here](http://docs.mongodb.org/manual/) on the mongodb site.
+
 ##MongoLab
 >MongoLab is a website to create and manage mongoDB databases.
 [MongoLab](https://mongolab.com/)  

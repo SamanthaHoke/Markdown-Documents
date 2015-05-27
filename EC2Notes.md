@@ -133,9 +133,67 @@ Run these files from JsObjects:
 
 >Shell scripts are run with `./scriptName.sh`
 
+##Upstart
+Upstart is a tool to keep our applications running even after we close the PuTTY session to our EC2 instance.
+
+####Create a bin directory on your EC2 instance
 
 
-#Important notes
+	if [ ! -d "~/bin" ]; then
+    mkdir ~/bin
+	fi
+####Create symbolic link to project in the bin directory
+
+	ln -s /home/ubuntu/Git/repositoryName/projectName ~/bin/linkName
+
+####Create .conf file
+Place in project folder.
+
+		# This is an upstart script: http://upstart.ubuntu.com/index.html
+	description "a script to keep a node.js application in memory even after rebooting"
+	author      "Charle Calvert - http://www.elvenware.com/charlie"
+
+	# Start after all drives mounted
+	start on started mountall
+	stop on shutdown
+
+	# Automatically Respawn:
+	respawn
+	respawn limit 99 5
+
+	script
+    	export HOME="/home/ubuntu"
+
+	# The following assumes nodejs is in /usr/bin
+    	exec /usr/bin/nodejs /home/ubuntu/bin/midterm/bin/www >> /var/log/midterm.log 2>&1
+
+	end script
+
+	post-start script
+   	# Optionally put a script here that will notifiy you node has (re)started
+  	 # /root/bin/hoptoad.sh "node.js has started!"
+   	echo "node.sj has started running BridgeReader"
+	end script
+
+Copy this file to etc/init/ folder:  
+
+	sudo cp midterm.conf /etc/init/midterm.conf
+
+Start and stop with:
+	
+	sudo start midterm
+	sudo stop midterm
+
+You can view the log of action on the running process by using:
+
+	cat ~/var/log/midterm.log
+
+
+###Resources
+ - Charlie Calvert's [NodeJs page](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#upstart)
+ - Charlie Calvert's [project notes](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week08-2015.html)
+
+##Important notes
  - Never have more than one running instance when using the free AWS account or you can be charged.
  - Don't create multiple elastic IP addresses: this would incur a fee.
  - Do not click "save" instead of "load" when selecting a saved session or it will erase the saved session when using PuTTY.
