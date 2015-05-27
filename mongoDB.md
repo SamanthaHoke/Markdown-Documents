@@ -70,6 +70,11 @@ Retrieve the collection in the module's factory:
 
 >Based on Charles Calvert's instructions on [creating an AngularMongoDBStarter](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongoDbStarter.html)
 
+##Install and set up MongoDB locally
+Download [here](http://www.mongodb.org/downloads).  
+Create a **data** folder with a **db** folder inside of it in your home directory.  
+Run mongo.exe giving it as a parameter the location of your **data** folder.
+>Also put mongo on your path.
 
 ##MongoLab
 >MongoLab is a website to create and manage mongoDB databases.
